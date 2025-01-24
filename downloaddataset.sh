@@ -25,6 +25,7 @@ download_tiny() {
         download_dataset pdb1HYS https://suitesparse-collection-website.herokuapp.com/MM/Williams/pdb1HYS.tar.gz
         download_dataset consph https://suitesparse-collection-website.herokuapp.com/MM/Williams/consph.tar.gz
         download_dataset webbase-1M https://suitesparse-collection-website.herokuapp.com/MM/Williams/webbase-1M.tar.gz
+        download_dataset bcspwr06 https://suitesparse-collection-website.herokuapp.com/MM/HB/bcspwr06.tar.gz
     fi
 }
 
@@ -77,6 +78,14 @@ download_hipmcl() {
     fi
 }
 
+
+download_tfCombBLAS(){
+  echo "download dataset used for benchmarking CombBLAS GPU"
+  download_dataset atmosmodd https://suitesparse-collection-website.herokuapp.com/MM/Bourchtein/atmosmodd.tar.gz
+  download_dataset delaunay_n22 https://suitesparse-collection-website.herokuapp.com/MM/DIMACS10/delaunay_n22.tar.gz 
+}
+
+
 datasetname="$1"
 
 if [[ "$datasetname" == "tiny" ]]; then
@@ -90,4 +99,8 @@ fi
 
 if [[ "$datasetname" == "mcl" ]]; then
     download_hipmcl
+fi
+
+if [[ "$datasetname" == "tfcombblas" ]]; then
+    download_tfCombBLAS
 fi
