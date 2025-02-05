@@ -80,11 +80,28 @@ download_hipmcl() {
 
 
 download_tfCombBLAS(){
-  echo "download dataset used for benchmarking CombBLAS GPU"
-  download_dataset atmosmodd https://suitesparse-collection-website.herokuapp.com/MM/Bourchtein/atmosmodd.tar.gz
-  download_dataset delaunay_n22 https://suitesparse-collection-website.herokuapp.com/MM/DIMACS10/delaunay_n22.tar.gz 
+    echo "download dataset used for benchmarking CombBLAS GPU"
+    download_dataset atmosmodd https://suitesparse-collection-website.herokuapp.com/MM/Bourchtein/atmosmodd.tar.gz
+    download_dataset delaunay_n22 https://suitesparse-collection-website.herokuapp.com/MM/DIMACS10/delaunay_n22.tar.gz 
 }
 
+download_ACSpGEMM(){
+    echo "download dataset used for benchmarking AC-SpGEMM Paper https://dl.acm.org/doi/10.1145/3293883.3295701 "
+    download_dataset language https://suitesparse-collection-website.herokuapp.com/MM/Tromble/language.tar.gz
+    download_dataset scircuit https://suitesparse-collection-website.herokuapp.com/MM/Hamm/scircuit.tar.gz
+    download_dataset stat96v2 https://suitesparse-collection-website.herokuapp.com/MM/Meszaros/stat96v2.tar.gz
+    download_dataset asia_osm https://suitesparse-collection-website.herokuapp.com/MM/DIMACS10/asia_osm.tar.gz
+    download_dataset atmosmodl https://suitesparse-collection-website.herokuapp.com/MM/Bourchtein/atmosmodl.tar.gz
+    download_dataset filter3D https://suitesparse-collection-website.herokuapp.com/MM/Oberwolfach/filter3D.tar.gz
+    download_dataset bibd_19_9 https://suitesparse-collection-website.herokuapp.com/MM/JGD_BIBD/bibd_19_9.tar.gz
+    download_dataset cant https://suitesparse-collection-website.herokuapp.com/MM/Williams/cant.tar.gz
+    download_dataset landmark https://suitesparse-collection-website.herokuapp.com/MM/Pereyra/landmark.tar.gz
+    download_dataset hood https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/hood.tar.gz
+    download_dataset TSOPF_RS_b2383 https://suitesparse-collection-website.herokuapp.com/MM/TSOPF/TSOPF_RS_b2383.tar.gz
+    download_dataset hugebubbles-00020 https://suitesparse-collection-website.herokuapp.com/MM/DIMACS10/hugebubbles-00020.tar.gz
+    download_dataset poisson3Da https://suitesparse-collection-website.herokuapp.com/MM/FEMLAB/poisson3Da.tar.gz
+    download_dataset TSC_OPF_1047 https://suitesparse-collection-website.herokuapp.com/MM/IPSO/TSC_OPF_1047.tar.gz
+}
 
 datasetname="$1"
 
@@ -103,4 +120,8 @@ fi
 
 if [[ "$datasetname" == "tfcombblas" ]]; then
     download_tfCombBLAS
+fi
+
+if [[ "$datasetname" == "acspgemm" ]]; then
+    download_ACSpGEMM
 fi
