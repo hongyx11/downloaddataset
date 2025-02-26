@@ -103,6 +103,13 @@ download_ACSpGEMM(){
     download_dataset TSC_OPF_1047 https://suitesparse-collection-website.herokuapp.com/MM/IPSO/TSC_OPF_1047.tar.gz
 }
 
+download_suitsparse_small(){
+    download_dataset 1138_bus https://suitesparse-collection-website.herokuapp.com/MM/HB/1138_bus.tar.gz
+    download_dataset 494_bus https://suitesparse-collection-website.herokuapp.com/MM/HB/494_bus.tar.gz
+    download_dataset 662_bus https://suitesparse-collection-website.herokuapp.com/MM/HB/662_bus.tar.gz
+    download_dataset 685_bus https://suitesparse-collection-website.herokuapp.com/MM/HB/685_bus.tar.gz
+}
+
 datasetname="$1"
 
 if [[ "$datasetname" == "tiny" ]]; then
@@ -124,4 +131,7 @@ fi
 
 if [[ "$datasetname" == "acspgemm" ]]; then
     download_ACSpGEMM
+fi
+if [[ "$datasetname" == "suitsparsesmall" ]]; then
+    download_suitsparse_small
 fi
